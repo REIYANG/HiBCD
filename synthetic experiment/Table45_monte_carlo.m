@@ -1,7 +1,6 @@
 clc; clear; close all;
 addpath([pwd,'/../methods/FUMI']);
 addpath([pwd,'/../methods/CNMF']);
-addpath([pwd,'/../methods/HySure']);
 addpath([pwd,'/../methods/SupResPALM']);
 addpath([pwd,'/../methods']);
 addpath([pwd,'/../functions']);
