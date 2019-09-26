@@ -1,0 +1,24 @@
+function [Out,para_opt]= FUMI(Y_H,Y_M,Opt)
+kernelSize = Opt.kernelSize;
+M = Opt.M;
+M_M = Opt.M_M;
+N = Opt.N;
+F = Opt.F;
+G = Opt.G;
+W1 = Opt.W1;
+W2 = Opt.W2;
+sizeIM=[W1,W2,N];
+psfY.ds_r = Opt.dsRatio;
+sig = Opt.GauSigma;  
+KerBlu = fspecial('gaussian',[kernelSize kernelSize],sig);
+psfY.B = KernelToMatrix(KerBlu,W1,W2);
+mask = zeros(size(psfY.B));
+mask(1:psfY.ds_r:end,1:psfY.ds_r:end,:) = 1;
+psfY.dsp = mask;
+ChInv = eye(M);
+CmInv = eye(M_M);
+para_opt_in.SpaDeg = 1; %%  If the degradation B and S are known, SpaDeg=1; otherwise, SpaDeg=0
+para_opt_in.E_ini = Opt.A_init;
+para_opt_in.N_it = Opt.maxIteration;
+para_opt_in.thre_BCD = Opt.convthresh;
+[Out,para_opt] = JointFusionUnmix(Y_H,Y_M,ChInv,CmInv,psfY,F,sizeIM,para_opt_in,G);
