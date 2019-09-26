@@ -2,8 +2,9 @@
 Matlab code for "Hybrid Inexact BCD for Coupled Structured Matrix Factorization in Hyperspectral Super-Resolution", submitted to IEEE Transaction on Signal Processing, 2019.
 
 ## Usage
-1. Semi-real dataset experiment: run "Fig2_SAMmap.m", "Fig3_PSNRcurve.m", "Table12_one_shot.m" and "Table3_step_size.m" in folder "semireal experiment"
-   * Note: please download the real HS image from the link provided below, and run script "data_generation" to get the data matrix "Chikusei_1080.mat"
+1. Semi-real dataset experiment: run "Table12_one_shot.m", "Table3_step_size.m", "Fig2_SAMmap.m" and "Fig3_PSNRcurve.m" in folder "semireal experiment"
+   * Please download the real HS image from the link provided below, and run script "data_generation" to get the data matrix "Chikusei_1080.mat"  
+   * To use "Fig2_SAMmap.m" and "Fig3_PSNRcurve.m", first run "Table12_one_shot.m" and save the resulting "record" variable as "record.mat"
 
 2. Synthetic dataset experiment: run "Table45_monte_carlo" in folder "synthetic experiment"
 
