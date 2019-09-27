@@ -1,4 +1,4 @@
-load('Chikusei.mat'); % the data file downloaded from http://naotoyokoya.com/Download.html
+load('HyperspecVNIR_Chikusei_20140729.mat'); % the data file downloaded from http://naotoyokoya.com/Download.html
 
 Lx = 1080;
 Ly = 1080;
